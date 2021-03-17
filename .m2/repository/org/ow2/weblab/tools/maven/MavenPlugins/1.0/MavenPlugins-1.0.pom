@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.ow2.weblab.tools.maven</groupId>
+	<artifactId>MavenPlugins</artifactId>
+	<version>1.0</version>
+
+	<modules>
+		<module>archetypes</module>
+		<module>weblab-archetype-plugin</module>
+	</modules>
+
+	<packaging>pom</packaging>
+	<name>Maven Plugins</name>
+	<description>This is the meta pom used to package WebLab Maven plugin.</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<url>http://weblab.ow2.org</url>
+	<inceptionYear>2004</inceptionYear>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+				<inherited>true</inherited>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showWarnings>true</showWarnings>
+					<showDeprecations>true</showDeprecations>
+					<debug>true</debug>
+					<optimize>false</optimize>
+					<verbose>true</verbose>
+				</configuration>
+				<inherited>true</inherited>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<docencoding>${project.build.sourceEncoding}</docencoding>
+					<charset>${project.build.sourceEncoding}</charset>
+					<tags>
+						<tag>
+							<name>todo</name>
+							<placement>a</placement>
+							<head>To do:</head>
+						</tag>
+						<tag>
+							<name>warning</name>
+							<placement>a</placement>
+							<head>WARNING:</head>
+						</tag>
+						<tag>
+							<name>date</name>
+							<placement>a</placement>
+							<head>Date:</head>
+						</tag>
+					</tags>
+					<minmemory>128m</minmemory>
+					<maxmemory>512m</maxmemory>
+					<debug>true</debug>
+					<detectLinks>true</detectLinks>
+					<detectJavaApiLink>true</detectJavaApiLink>
+					<verbose>true</verbose>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<id>links</id>
+						<reports>
+							<report>javadoc</report>
+							<report>test-javadoc</report>
+						</reports>
+						<inherited>true</inherited>
+					</reportSet>
+				</reportSets>
+				<inherited>true</inherited>
+			</plugin>
+		</plugins>
+	</reporting>
+
+
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>ow2.release</id>
+			<name>OW2 Maven 2 Releases Repository</name>
+			<url>scp://jupiter.objectweb.org/var/lib/gforge/chroot/home/groups/maven/htdocs/maven2</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>ow2.snapshot</id>
+			<name>OW2 Maven 2 Snapshots Repository</name>
+			<url>scp://jupiter.objectweb.org/var/lib/gforge/chroot/home/groups/maven/htdocs/maven2-snapshot</url>
+			<layout>default</layout>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>

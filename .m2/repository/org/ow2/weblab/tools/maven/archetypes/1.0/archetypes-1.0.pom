@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.ow2.weblab.tools.maven</groupId>
+		<artifactId>MavenPlugins</artifactId>
+		<version>1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>archetypes</artifactId>
+
+	<modules>
+		<module>weblab-archetype-analyser</module>
+		<module>weblab-archetype-configurable</module>
+		<module>weblab-archetype-indexer</module>
+		<module>weblab-archetype-queuemanager</module>
+		<module>weblab-archetype-reportprovider</module>
+		<module>weblab-archetype-resourcecontainer</module>
+		<module>weblab-archetype-searcher</module>
+		<module>weblab-archetype-sourcereader</module>
+		<module>weblab-archetype-trainable</module>
+		<module>weblab-archetype-resources</module>
+	</modules>
+
+	<packaging>pom</packaging>
+	<name>Archetypes</name>
+	<description>This is the meta pom used to package every archetypes needed by the WebLab Archetype plugin (i.e. one per interface + one generic).</description>
+
+
+</project>
